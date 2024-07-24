@@ -1,0 +1,13 @@
+{
+  "name": "ts02_special_types",
+  "version": "1.0.0",
+  "description": "TypeScript Special Types",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

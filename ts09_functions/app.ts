@@ -64,3 +64,31 @@ can be explicitly marked as optional. */
 For parameters with default values, the default value goes after the 
 type annotation: */
 
+// function pow(value: number, exponent: number = 10) {
+//     return value ** exponent;
+// }
+
+// console.log(pow(2));
+
+
+
+
+
+/* Named Parameters
+Typing named parameters follows the same pattern as typing normal 
+parameters. */
+
+// function divide( {dividend, divisor}: {dividend: number, divisor: number}) {
+//     return dividend / divisor;
+// }
+
+// console.log(divide({dividend: 10, divisor: 2}));
+
+
+
+
+
+/* Rest Parameters
+Rest parameters can be typed like normal parameters, but the type must 
+be an array as rest parameters are always arrays. */
+

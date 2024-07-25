@@ -23,8 +23,22 @@ declarations. */
 By default TypeScript will assume all parameters are required, but they
 can be explicitly marked as optional. */
 // The '?' operator here marks parameter `c` as optional
-function usama(a, b, c) {
-    return a + b + (c || 0);
+// function add(a: number, b: number, c?: number) {
+//     return a + b + (c || 0);
+// }
+// console.log(add(2, 5));
+/* Default Parameters
+For parameters with default values, the default value goes after the
+type annotation: */
+// function pow(value: number, exponent: number = 10) {
+//     return value ** exponent;
+// }
+// console.log(pow(2));
+/* Named Parameters
+Typing named parameters follows the same pattern as typing normal
+parameters. */
+function divide({ dividend, divisor }) {
+    return dividend / divisor;
 }
-console.log(usama(2, 4, 7));
+console.log(divide({ dividend: 10, divisor: 2 }));
 export {};

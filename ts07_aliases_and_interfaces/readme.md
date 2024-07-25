@@ -75,3 +75,29 @@ const coloredRectangle: ColoredRectangle = {
 
 ________________________________________________________________________
 
+
+
+
+
+Create a Type Alias for a string, called carType:
+
+
+type carType = string
+
+
+
+Create an interface called myInterface, with the property myProp as a string:
+
+
+interface myInterface { 
+  myProp: string
+}
+
+
+
+Extend the myInterface interface from last exercise, and add a property myExtProp as a number:
+
+
+interface myExtInterface extends myInterface {  
+  myExtProp: number
+}

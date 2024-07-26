@@ -199,3 +199,52 @@ class for other classes without having to implement all the members.
 This is done by using the abstract keyword. Members that are left 
 unimplemented also use the abstract keyword. */
 
+abstract class Polygon {
+    public abstract getArea(): number;
+
+    public toString(): string {
+        return `Polygon[area${this.getArea()}]`;
+    }
+}
+
+class Rectangle extends Polygon {
+    public constructor(protected readonly width: number, 
+        protected readonly height: number) {
+        super();
+    }
+
+    public getArea(): number {
+        return this.width * this.height;
+    }
+}
+
+const myRec = new Rectangle(10, 30);
+
+console.log(myRec.getArea());
+
+
+
+
+
+
+/* Specify that Person.name can only be accessed within the class, but 
+that the method Person.getName() can be accessed anywhere:
+
+
+class Person {
+    private name: string;
+
+    public constructor(name: string) {
+        this.name = name;
+    }
+
+    public
+        getName(): string {
+        return this.name;
+    }
+}
+
+
+
+
+*/

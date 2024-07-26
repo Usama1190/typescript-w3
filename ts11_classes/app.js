@@ -1,24 +1,28 @@
 // TypeScript Classes
-/* Members: Types
-The members of a class (properties & methods) are typed using type
-annotations, similar to variables. */
-// class Person {
-//     myName: string;
-// }
-// const person = new Person();
-// person.myName = 'Usama';
-// console.log(person);
-/* Members: Visibility
-Class members also be given special modifiers which affect visibility. */
-class Person {
-    name;
-    constructor(name) {
-        this.name = name;
+class Rectangle {
+    width;
+    height;
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
     }
-    getName() {
-        return this.name;
+    getArea() {
+        return this.height * this.width;
+    }
+    Usama() {
+        return `Hello Usama! ${this.width}, ${this.height}`;
     }
 }
-const person = new Person('Usama');
-console.log(person.getName());
+class Square extends Rectangle {
+    constructor(width) {
+        super(width, width);
+    }
+    Usama() {
+        return `Hello Usama! I am override ${this.width}, ${this.height}.`;
+    }
+}
+const myRec = new Rectangle(13, 45);
+console.log(myRec.getArea());
+const mySqr = new Square(24);
+console.log(mySqr.getArea());
 export {};

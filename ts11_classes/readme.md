@@ -184,5 +184,4 @@ class Rectangle extends Polygon {
 Abstract classes cannot be directly instantiated, as they do not have all their members implemented.
 
 
-
 ________________________________________________________________________

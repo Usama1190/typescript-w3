@@ -1,7 +1,8 @@
-// Explicit Type
-// Explicit - writing out the type:
+// TypeScript Simple Types
 
-// let firstName: string = 'Usama';     // type string
+
+// Explicit Type
+// let firstName: string = 'Usama';    // type string
 
 // console.log(typeof firstName);
 
@@ -10,72 +11,41 @@
 
 
 // Implicit Type
-// Implicit - TypeScript will "guess" the type, based on the assigned value:
-
 // let firstName = 'Usama';
 
-// console.log(typeof firstName1);
+// console.log(typeof firstName);
 
 
 
 
 
-// Error In Type Assignment
-// TypeScript will throw an error if data types do not match.
+// Error in Type Assignment  ( explicit )
+// let firstName: string = 'Usama';    // type string
 
-// let firstName: string = 'Usama';        // type string
-
-// firstName = 33;    // error
-//                    Type 'number' is not assignable to type 'string'
-
-// attempts to re-assign the value to a different type
-
-// console.log(firstName);
+// firstName = 33;  // attempts to re-assign a value to a different type
+// Error: Type 'number' is not assignable to type 'string'.ts(2322)
 
 
 
 
 
+// Error in Type Assignment  ( implicit )
+// let firstName = 'Usama';
 
-// Implicit type assignment would have made firstName less noticeable as 
-//  a string, but both will throw an error:
-
-// let firstName = 'Usama';        // Inferred to type string
-
-// firstName = 33;   // attempts to re-assign the value to a different type
-
-// console.log(firstName);
+// firstName = 23;   // attempts to re-assign a value to a different type
+// Error: Type 'number' is not assignable to type 'string'.ts(2322)
 
 
 
 
 
-
+// Enable to Infer
 // Implicit any as JSON.parse doesn't known what type of data it returns
-// so it can be "any" thing...
+// so it can be "any" things...
 
-// const json = JSON.parse('55');
+let json = JSON.parse('55');
 
 // Most expect json to be an object, but it can be a string or a number
 // like this example
 
-// console.log(typeof json);     // type number
-
-
-
-
-
-
-
-
-
-
-// Topic: Simple Types
-// There are two main ways TypeScript assigns a type:
-// Explicit and Implicit
-
-// Create a "firstName" variable, string type using Implicit type:
-// let firstName = 'Usama';
-
-// Create a "firstName" variable, string type using Explicit type:
-// let firstName: string = 'Usama';
+console.log(typeof json);

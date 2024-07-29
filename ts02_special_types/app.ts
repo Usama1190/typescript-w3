@@ -39,3 +39,40 @@
 
 
 // Type: unknown
+// let w: unknown = 23;
+
+// w = 'usama';     // no error
+
+// w = { runANonExistentMethod: () => {
+//     console.log("I think therefore I am");
+// } 
+// } as { runANonExistentMethod: () => void }
+
+    // How can we avoid the error for the code commented out below when 
+    // we don't know the type? 
+    // w.runANonExistentMethod(); // Error: Object is of type 'unknown'. 
+
+// if(typeof w === 'object' && w !== null) {
+//     (w as { runANonExistentMethod: Function }).runANonExistentMethod(); 
+// } 
+// Although we have to cast multiple times we can do a check in the if 
+// to secure our type and have a safer casting
+
+
+
+
+
+// Type: never
+// let x: never = true;
+// Type 'boolean' is not assignable to type 'never'.ts(2322)
+
+
+
+
+
+// Type: undefined and null
+let y: undefined = undefined;
+console.log(typeof y);
+
+let f: null = null;
+console.log(typeof f);

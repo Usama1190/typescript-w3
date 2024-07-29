@@ -1,33 +1,30 @@
 // TypeScript Enums
 
-/* Numeric Enums - Default
-By default, enums will initialize the first value to 0 and add 1 to 
-each additional value: */
 
+
+// Numeric Enum - Default
 // enum CardinalDirection {
 //     North,
 //     East,
 //     South,
 //     West
-// };
+// }
 
-// let currectDirection = CardinalDirection.North;
+// let currentDirection = CardinalDirection.North;
 
-// North is the first value so it logs 0
-// console.log(currectDirection);
+// North is the first value so it logs '0'
+// console.log(currentDirection);
 
 // throws error when commented in as 'North' is not a valid enum
-// currentDirection = 'North'; 
-// Error: "North" is not assignable to type 'CardinalDirections'.
+
+// currentDirection = 'North';
+// Error: Type '"North"' is not assignable to type 'CardinalDirection'.ts(2322)
 
 
 
 
 
-/* Numeric Enums - Initialized
-You can set the value of the first numeric enum and have it auto 
-increment from that: */
-
+// Numeric Enum - Initialized
 // enum CardinalDirection {
 //     North = 1,
 //     East,
@@ -35,7 +32,7 @@ increment from that: */
 //     West
 // }
 
-// logs 1 since we initialized the first value to something other than 0
+// logs 1 since we initialized the first value to something other than '0'
 // console.log(CardinalDirection.North);
 
 // logs 4 as it continued on from the initial '1' value
@@ -45,11 +42,9 @@ increment from that: */
 
 
 
-/* Numeric Enums - Fully Initialized
-You can assign unique number values for each enum value. Then the 
-values will not incremented automatically: */
+// Numeric Enum - Fully Initialized
 
-// enum StatusCode {
+// enum StatusCodes {
 //     NotFound = 404,
 //     Success = 200,
 //     Accepted = 202,
@@ -57,23 +52,20 @@ values will not incremented automatically: */
 // }
 
 // logs 404
-// console.log(StatusCode.NotFound);
+// console.log(StatusCodes.NotFound);
 
 // logs 200
-// console.log(StatusCode.Success);
+// console.log(StatusCodes.Success);
 
 
 
 
 
-
-/* String Enums
-Enums can also contain strings. This is more common than numeric enums, 
-because of their readability and intent. */
+// String Enums
 
 // enum CardinalDirection {
 //     North = 'North',
-//     East = 'East', 
+//     East = 'East',
 //     South = 'South',
 //     West = 'West'
 // }
@@ -83,28 +75,3 @@ because of their readability and intent. */
 
 // logs West
 // console.log(CardinalDirection.West);
-
-
-
-
-
-/* Create an enum called myEnum, with 2 constants (myFirstConst, 
-mySecondConst) with default values:
-
-
-enum myEnum {
-    myFirstConst,  
-    mySecondConst
-}; 
-
-
-
-Create an enum called myEnum, with 2 constants (myFirstConst, 
-mySecondConst) with the string values "first" and "second":
-
-
-enum myEnum {
-    myFirstConst = "first",
-    mySecondConst = "secong"
-};
-*/

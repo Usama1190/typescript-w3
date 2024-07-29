@@ -72,7 +72,7 @@
 
 // Type: undefined and null
 let y: undefined = undefined;
-console.log(typeof y);
+console.log(typeof y);         // undefined
 
 let f: null = null;
-console.log(typeof f);
+console.log(typeof f);         // object

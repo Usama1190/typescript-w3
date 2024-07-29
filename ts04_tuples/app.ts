@@ -59,3 +59,22 @@
 // throws error as it is readonly
 // ourReadonlyTuple.push('sami');
 //Property 'push' does not exist on type 'readonly [number, boolean, string]'.ts(2339)
+
+
+
+
+
+// Named Tuple
+// const graph: [x: number, y: number] = [12.3, 45.2];
+
+
+
+
+
+// Destructuring Tuple
+const graph: [number, number] = [12.4, 45.8];
+
+const [x, y] = graph;
+
+console.log(x);
+console.log(y);

@@ -1,13 +1,11 @@
-/* TypeScript Arrays
+// TypeScript Arrays
 
-TypeScript has a specific syntax for typing arrays.  */
-
+// Syntax
 // const names: string[] = [];
 
-// names.push('Usama');   // no error
-
-// names.push(3);      // Error: Argument of type 'number' is not 
-//                       assignable to parameter of type 'string'.
+// names.push('usama');
+// names.push(3); 
+// Error: Argument of type 'number' is not assignable to parameter of type 'string'.ts(2345)
 
 // console.log(names);
 
@@ -15,40 +13,30 @@ TypeScript has a specific syntax for typing arrays.  */
 
 
 
-/* Readonly
-The readonly keyword can prevent arrays from being changed.  */
+// Readonly
+// const names: readonly string[] = ['John'];
 
-// const names: readonly string[] = ['Usama'];
-
-// names.push('Ali');     // Error: Property 'push' does not exist on 
-//                              type 'readonly string[]'.
+// names.push('usama');
+// Property 'push' does not exist on type 'readonly string[]'.ts(2339)
 
 // try removing the readonly modifier and see if it works
-// console.log(names);
 
 
 
 
 
-/* Type Inference
-TypeScript can infer the type of an array if it has values. */
+// Type Inference
+// const myNumbers = [1, 2, 3, 4];    // infered to type number[]
 
-const numbers = [1, 2, 3];     // inferred to the type number[]
+// myNumbers.push(5);     // no error
 
-numbers.push(4);    // no error
+// comment line below out to see the successfull assignment
+// myNumbers.push('5'); 
+// Argument of type 'string' is not assignable to parameter of type 'number'.ts(2345)
 
-// comment line below out to see the successful assignment
-
-// numbers.push('2');    // Error: Argument of type 'string' is not 
-//                          assignable to parameter of type 'number'.
-
-console.log(numbers);
-
-let head: number = numbers[0];     // no error
-
-console.log(head);
+// console.log(myNumbers);
 
 
+// let head: number = myNumbers[0];     // no error
 
-// Prevent the array from being changed:
-// const names:  'readonly'  string[] = ["Dylan"];
+// console.log(head);

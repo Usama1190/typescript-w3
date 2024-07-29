@@ -25,6 +25,11 @@ _________________________________________________________________________
 
 TypeScript Tutorial in W3schools Website: https://www.w3schools.com
 
+1. print Hello World!
+2. What is TypeScript
+3. Why should I use TypeScript
+4. How do I use TypeScript
+
 
 Topic: Introduction
 TypeScript allows developers to add  'types'  to JavaScript.
@@ -36,5 +41,9 @@ Topic: Get Started
 The TypeScript compiler can be configured with which file?
 'tsconfig.json'
 
+
+1. TypeScript Compiler
+2. Installing the Compiler
+3. Configuring the Compiler
 
 _________________________________________________________________________

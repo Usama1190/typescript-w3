@@ -1,147 +1,53 @@
 TypeScript Utility Types
 
-TypeScript comes with a large number of types that can help with some common type manipulation, usually referred to as utility types.
-
-This chapter covers the most popular utility types.
 
 
-________________________________________________________________________
+Topic
+1. Partial
+2. Required
+3. Record
+4. Omit
+5. Pick
+6. Exclude
+7. ReturnType
+8. Parameters
+9. Readonly
 
-Partial
-Partial changes all the properties in an object to be optional.
 
-ExampleGet your own TypeScript Server
-interface Point {
-  x: number;
-  y: number;
+
+
+Declare an object kindPerson from the Person interface, where all the properties are optional:
+
+interface Person {
+  age: number;
+  firstName: string;
+  lastName: string;
 }
+            
+let kindPerson: Partial<Person> = {};
 
-let pointPart: Partial<Point> = {}; // `Partial` allows x and y to be optional
-pointPart.x = 10;
 
 
-________________________________________________________________________
 
-Required
-Required changes all the properties in an object to be required.
 
-Example
-interface Car {
-  make: string;
-  model: string;
-  mileage?: number;
+Declare an object kindPerson from the Person interface, where all the properties are required.
+
+interface Person {
+  age: number;
+  firstName: string;
+  lastName?: string;
 }
-
-let myCar: Required<Car> = {
-  make: 'Ford',
-  model: 'Focus',
-  mileage: 12000 // `Required` forces mileage to be defined
+            
+let kindPerson: Required<Person> = {
+  age: 1800,
+  firstName: "Santa",
+  lastName: "Claus"
 };
 
 
-________________________________________________________________________
 
-Record
-Record is a shortcut to defining an object type with a specific key type and value type.
 
-Example
-const nameAgeMap: Record<string, number> = {
-  'Alice': 21,
-  'Bob': 25
-};
+
+Complete the sentence:
 
 Record<string, number> is equivalent to { [key: string]: number }
-
-
-________________________________________________________________________
-
-Omit
-Omit removes keys from an object type.
-
-Example
-interface Person {
-  name: string;
-  age: number;
-  location?: string;
-}
-
-const bob: Omit<Person, 'age' | 'location'> = {
-  name: 'Bob'
-  // `Omit` has removed age and location from the type and they can't be defined here
-};
-
-
-________________________________________________________________________
-
-Pick
-Pick removes all but the specified keys from an object type.
-
-Example
-interface Person {
-  name: string;
-  age: number;
-  location?: string;
-}
-
-const bob: Pick<Person, 'name'> = {
-  name: 'Bob'
-  // `Pick` has only kept name, so age and location were removed from the type and they can't be defined here
-};
-
-
-________________________________________________________________________
-
-Exclude
-Exclude removes types from a union.
-
-Example
-type Primitive = string | number | boolean
-const value: Exclude<Primitive, string> = true; // a string cannot be used here since Exclude removed it from the type.
-
-
-________________________________________________________________________
-
-ReturnType
-ReturnType extracts the return type of a function type.
-
-Example
-type PointGenerator = () => { x: number; y: number; };
-const point: ReturnType<PointGenerator> = {
-  x: 10,
-  y: 20
-};
-
-
-________________________________________________________________________
-
-Parameters
-Parameters extracts the parameter types of a function type as an array.
-
-Example
-type PointPrinter = (p: { x: number; y: number; }) => void;
-const point: Parameters<PointPrinter>[0] = {
-  x: 10,
-  y: 20
-};
-
-
-________________________________________________________________________
-
-Readonly
-Readonly is used to create a new type where all properties are readonly, meaning they cannot be modified once assigned a value.
-
-Keep in mind TypeScript will prevent this at compile time, but in theory since it is compiled down to JavaScript you can still override a readonly property.
-
-Example
-interface Person {
-  name: string;
-  age: number;
-}
-const person: Readonly<Person> = {
-  name: "Dylan",
-  age: 35,
-};
-person.name = 'Israel'; // prog.ts(11,8): error TS2540: Cannot assign to 'name' because it is a read-only property.
-
-
-________________________________________________________________________

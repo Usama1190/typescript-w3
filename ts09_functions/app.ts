@@ -1,10 +1,12 @@
 // TypeScript Functions
 
-/* Return Type
-The type of the value returned by the function can be explicitly defined. */
+
+
+// Return Type
+// this `: number` here specifies that this function return a number
 
 // function getTime(): number {
-//     return new Date().getTime();
+//   return new Date().getTime();
 // }
 
 // console.log(getTime());
@@ -13,14 +15,10 @@ The type of the value returned by the function can be explicitly defined. */
 
 
 
-
-/* Void Return Type
-The type void can be used to indicate a function doesn't return any 
-value. */
-
+// Void Return Type
 // function printHello(): void {
-//     console.log('Hello!');
-    
+//   console.log('Hello!');
+  
 // }
 
 // printHello();
@@ -29,135 +27,68 @@ value. */
 
 
 
-/* Parameters
-Function parameters are typed with a similar syntax as variable 
-declarations. */
 
+// Parameters
 // function multiply(a: number, b: number) {
-//     return a * b;
+//   return a * b;
 // }
 
-// console.log(multiply(2, 6));
+// console.log(multiply(2, 5));
 
 
 
 
 
-
-/* Optional Parameters
-By default TypeScript will assume all parameters are required, but they 
-can be explicitly marked as optional. */
-
-// The '?' operator here marks parameter `c` as optional
-
+// Optional Parameters
+// The `?` operator here marks parameter `c` as optional
 // function add(a: number, b: number, c?: number) {
-//     return a + b + (c || 0);
+//   return a + b + (c || 0);
 // }
 
-// console.log(add(2, 5));
+// console.log(add(2, 4));
 
 
 
 
 
-/* Default Parameters
-For parameters with default values, the default value goes after the 
-type annotation: */
-
+// Default Parameters
 // function pow(value: number, exponent: number = 10) {
-//     return value ** exponent;
+//   return value ** exponent
 // }
 
-// console.log(pow(2));
+// console.log(pow(10));
 
 
 
 
 
-/* Named Parameters
-Typing named parameters follows the same pattern as typing normal 
-parameters. */
-
-// function divide( {dividend, divisor}: {dividend: number, divisor: number}) {
-//     return dividend / divisor;
+// Named Parameters
+// function divide( { dividend, divisor }: { dividend: number, divisor: number }) {
+//   return dividend / divisor;
 // }
 
-// console.log(divide({dividend: 10, divisor: 2}));
+// console.log(divide({ dividend: 12, divisor: 2 }));
 
 
 
 
 
-/* Rest Parameters
-Rest parameters can be typed like normal parameters, but the type must 
-be an array as rest parameters are always arrays. */
-
+// Rest Parameters
 // function add(a: number, b: number, ...rest: number[]) {
-//     return a + b + rest.reduce((p, c) => p + c, 0);
+//   return a + b + rest.reduce((c, d) => c + d + 0)
 // }
 
-// console.log(add(10, 10, 10, 10, 10));
+// console.log(add(2, 3, 4, 5, 6, 7));
 
 
 
 
 
-/* Type Alias
-Function types can be specified separately from functions with type 
-aliases. */
+// Type Alias
+type Negate = (value: number) => number;
 
-type Negate = (value: number) => number
-
-// In this function the parameter `value` automatically gets assigned the
-// type `number` from the type `Negate`
+/* In this function the parameter `value` automatically gets assign the 
+`number` from the type Negate */
 const negateFunction: Negate = (value) => value * -1;
 
-console.log(negateFunction(10));
-
-
-
-
-
-
-/* Create a function that returns the string "Learning is Fun!", with the return type explicitly defined:
-
-
-function myFunc(): string{
-  return
- "Learning is Fun!";
-}
-
-
-
-
-
-Create a function that specifically does not return a value:
-
-
-function myFunc(): void {
-  console.log("Learning is Fun!");
-}
-
-
-
-
-Create a function with 2 parameters (myVar1 and myVar2), that are both strings:
-
-
-function myFunc(myVar1: string, myVar2: string) {
-  return(myVar1 + myVar2);
-}
-
-
-
-
-
-Create a function with 2 parameters (myVar1 and myVar2,in that order), that are both strings.
-
-Specify that myVar2 should be optional:
-
-
-function myFunc(myVar1: string, myVar2?: string) {
-  return(myVar1 + (myVar2 || ""));
-}
-*/
+console.log(negateFunction(12));

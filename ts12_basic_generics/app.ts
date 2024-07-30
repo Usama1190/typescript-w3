@@ -1,106 +1,124 @@
 // TypeScript Basic Generics
 
-/* Functions
-Generics with functions help make more generalized methods which more 
-accurately represent the types used and returned. */
-
-// function createPair<S, T>(a: S, b: T): [S, T] {
-//     return [a, b];
-// }
-
-// console.log(createPair<string, number>('hello', 12));
 
 
+// Functions
+/*
+function usama<U, S>(var1: U, var2: S): string {
+    return `My first var is: ${var1}, and second var is: ${var2}.`;
+}
+
+let returnValue: string = usama<string, string>('Usama', 'Israr');
+
+console.log(returnValue);
+*/
 
 
+/*
+function createPair<S, T>(v1: S, v2: T) {
+    return [v1, v2];
+}
 
-/* Classes
-Generics can be used to create generalized classes, like Map. */
-
-// class NamedValue<T> {
-//     private _value: T | undefined;
-
-//     constructor(private name: string) {}
-
-//     public setValue(value: T) {
-//         this._value = value;
-//     }
-
-//     public getValue(): T | undefined{
-//         return this._value;
-//     }
-
-//     public toString(): string {
-//         return `${this.name}: ${this._value}`
-//     }
-// }
-
-// const value = new NamedValue('Number');
-
-// value.setValue(12);
-
-// console.log(value.getValue());
-// console.log(value.toString());
+console.log(createPair<string, number>('hello', 23));  // ['hello', 23]
+*/
 
 
 
 
 
-/* Type Aliases
-Generics in type aliases allow creating types that are more reusable. */
+// Classes
+/*
+class NamedValue<T> {
+    public _value: T | undefined;
 
-// type Wrapperd<T> = { value: T }
+    constructor(private name: string) {}
 
-// const usama: Wrapperd<string> = {
-//     value: 'Israr'
-// }
+    public setValue(value: T) {
+        this._value = value;
+    }
 
-// console.log(usama);
+    public getValue(): T | undefined {
+        return this._value;
+    }
 
+    public toString(): string {
+        return `${this.name}: ${this._value}.`;
+    }
+}
 
+let value = new NamedValue<number>('myNumber');
 
-// interface Wrapperd<T> { value: T }
+value.setValue(12);
 
-// const usama: Wrapperd<string> = {
-//     value: 'Israr'
-// }
-
-// console.log(usama);
+console.log(value.toString());    // MyNumber: 12
+*/
 
 
 
 
 
 
-/* Default Value
-Generics can be assigned default values which apply if no other value 
-is specified or inferred. */
+// Type Aliase
+/*
+type Wrapped<T> = T;
+
+const myVar: Wrapped<string> = 'Usama'; */
+
+/*
+type Wrapped<T> = { value: T };
+
+const WrappedValue: Wrapped<number> = { value: 12 };
+*/
+
+
+interface Wrapped<T> { value: T };
+
+const WrappedValue: Wrapped<number> = { value: 12 };
 
 
 
 
-// type Wrapperd<T = string> = { value: T }
 
-// const usama: Wrapperd = {
-//     value: 'Israr'
-// }
+// Default Values
+/*
+class NamedValue<T = string> {
+    public _value: T | undefined;
 
-// console.log(usama);
+    constructor(private name: string) {}
+
+    public setValue(value: T) {
+        this._value = value;
+    }
+
+    public getValue(): T | undefined {
+        return this._value;
+    }
+
+    public toString(): string {
+        return `${this.name}: ${this._value}.`;
+    }
+}
+
+let value = new NamedValue('myNumber');
+
+value.setValue('usama');
+
+console.log(value.toString());    // MyNumber: 12
+*/
 
 
 
 
+// Extends
+function createLoggedPair<S extends string | number, 
+        T extends string | number>(v1: S, v2: T): [S, T] {
 
+    console.log(`Creating pair: v1 = '${v1}', v2 = '${v2}'.`);
 
-/* Extends
-Constraints can be added to generics to limit what's allowed. The 
-constraints make it possible to rely on a more specific type when using 
-the generic type. */
+    return [v1, v2];
+    
+}
 
-// type Wrapperd<T extends string | boolean> = { value: T }
+let returnValue = createLoggedPair<string, number>('usama', 34);
 
-// const usama: Wrapperd<boolean> = {
-//     value: true,
-// }
-
-// console.log(usama);
+console.log(returnValue);

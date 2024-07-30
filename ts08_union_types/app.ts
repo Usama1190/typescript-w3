@@ -1,11 +1,11 @@
 // TypeScript Union Types
 
-/* Union | (OR)
-Using the | we are saying our parameter is a string or number: */
 
+
+// Union | (OR)
 // function printStatusCode(code: string | number) {
-//     console.log(`My status code is ${code}.`);
-    
+//   console.log(`My status code is: ${code}.`);
+  
 // }
 
 // printStatusCode(404);
@@ -15,25 +15,13 @@ Using the | we are saying our parameter is a string or number: */
 
 
 
-/* Union Type Errors
-Note: you need to know what your type is when union types are being used 
-to avoid type errors: */
-
+// Union Type Errors
 // function printStatusCode(code: string | number) {
-//     // console.log(`My status code is ${code.toUpperCase()}`);
-    
+  // console.log(`My status code is ${code.toUpperCase()}.`);
+  /* Property 'toUpperCase' does not exist on type 'string | number'.
+  Property 'toUpperCase' does not exist on type 'number'.ts(2339) */
+  
 // }
 
-// error: Property 'toUpperCase' does not exist on type 'string | number'.
-// Property 'toUpperCase' does not exist on type 'number'
-
-
-
-
-
-/* Specify that the paramater "myVar" for the function can be either string or number:
-
-
-function myFunc(myVar: string | number) {
-  console.log(myVar)
-} */
+// printStatusCode('404');
+// printStatusCode(404);

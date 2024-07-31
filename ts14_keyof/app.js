@@ -1,12 +1,11 @@
 // TypeScript keyof
-/*`keyof Person` here creates a union type of "name" and "age", other
-strings will not be allowed */
-function usama(person, property) {
-    console.log(`The property is ${property}, and person porperty is ${person[property]}`);
+function usama(property, value) {
+    return { [property]: value };
 }
-let person = {
-    name: 'Osama',
-    age: 21
+let myObj = {
+    prop1: 'Osama',
+    prop2: 'Ahmed'
 };
-usama(person, 'name');
+let myVar = usama(2, 'landcuriers');
+console.log(myVar);
 export {};

@@ -156,4 +156,129 @@ function myFunc(myVar: string | number) {
 
 
 
-20. 
+20. Create a function that returns the string "Learning is Fun!", with the return type explicitly defined:
+
+
+function myFunc(): string {
+  return "Learning is Fun!";
+}
+
+
+
+
+21. Create a function that specifically does not return a value:
+
+
+function myFunc(): void {
+  console.log("Learning is Fun!");
+}
+
+
+
+
+22. Create a function with 2 parameters (myVar1 and myVar2), that are both strings:
+
+
+function myFunc(myVar1: string, myVar2: string) {
+  return(myVar1 + myVar2);
+}
+
+
+
+
+23. Create a function with 2 parameters (myVar1 and myVar2,in that order), that are both strings.
+
+Specify that myVar2 should be optional:
+
+
+function myFunc(myVar1: string, myVar2?: string) {
+  return(myVar1 + (myVar2 || ""));
+}
+
+
+
+
+24. Cast the "unknown" variable myVar as a string, using the as keyword:
+
+
+let myVar: unknown = "Hello world!";
+console.log((myVar as string).length);
+
+
+
+
+25. Cast the "unknown" variable myVar as a string, using < >:
+
+
+let myVar: unknown = "Hello world!";
+console.log((<string>myVar).length);
+
+
+
+
+26. Specify that Person.name can only be accessed within the class, but that the method Person.getName() can be accessed anywhere:
+
+
+class Person {
+  private name: string;
+  
+  public constructor(name: string) {
+    this.name = name;
+  }
+
+ 
+  public getName(): string {
+    return this.name;
+  }
+}
+
+
+
+
+27. Complete the Generic:
+
+
+function createPair<typeX, typeY>(x: typeX, y: typeY): [typeX, typeY] {
+  return [x, y];
+}
+console.log(createPair<string, number>('Meaning', 42));
+
+
+
+
+28. Declare an object kindPerson from the Person interface, where all the properties are optional:
+
+
+interface Person {
+  age: number;
+  firstName: string;
+  lastName: string;
+}
+            
+let kindPerson: Partial<Person> = {};
+
+
+
+
+29. Declare an object kindPerson from the Person interface, where all the properties are required.
+
+
+interface Person {
+  age: number;
+  firstName: string;
+  lastName?: string;
+}
+            
+let kindPerson: Required<Person> = {
+  age: 1800,
+  firstName: "Santa",
+  lastName: "Claus"
+};
+
+
+
+
+30. Complete the sentence:
+
+
+Record<string, number> is equivalent to { [key: string]: number }

@@ -1,8 +1,5 @@
+"use strict";
 // TypeScript Null & Undefined
-
-
-
-
 // Types
 /*
 let value: string | undefined | null = null;
@@ -14,11 +11,6 @@ console.log(typeof value);
 value = undefined;
 console.log(typeof value);
 */
-
-
-
-
-
 // Optional Chaining
 /*
 interface House {
@@ -47,8 +39,6 @@ const house: House = {
 
 printYardSize(house);    // prints `No yard`
 */
-
-
 /*
 interface Home {
     squr: number;
@@ -79,11 +69,6 @@ const home: Home = {
 
 myHoues(home);
 */
-
-
-
-
-
 // Nullish Coalescence
 /*
 function printMileage(mileage: number | null | undefined) {
@@ -93,30 +78,9 @@ function printMileage(mileage: number | null | undefined) {
 */
 // printMileage(null);    // Prints `Mileage: Not Available`
 // printMileage(0);       // Prints `Mileage: 0`
-
-
-
-
-
 // Null Assertion
-/*
-function getValue(): string | undefined {
+function getValue() {
     return 'Osama';
 }
-
 let value = getValue();
-
-console.log('value length: ' + value!.length);
-*/
-
-
-
-
-
-// Array Bounds Handling
-/*
-let array: number[] = [1, 2, 3];
-
-let value = array[0];
-*/   
-// with `noUncheckedIndexedAccesse` this has the type `number | undefined`
+console.log('value length: ' + value.length);
